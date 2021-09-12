@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Click on the "Show 5 rows" button To display 5 rows of {{ city }}'s raw data at a time.<br> <em>For more chunks of 5 rows click again<em></h1>
+
+
+    <div class="form-group">
+      <form method ="post" action="{{ url_for('display_raw_data',city=city,start_loc=start_loc) }}">
+        <button type="submit" name="submit_a" value="submit_a"> Show 5 rows </button>
+      </form>
+    </div>
+
+  <div class="">
+    <table class="table">
+      <tr class="table__header">
+        {% for hd in chunk_hds %}
+          <th class="table__cell">{{ hd }}</th>
+        {% endfor %}
+      </tr>
+      {% for row in chunk_rows %}
+      <tr class="table__row">
+        {% for cell in row %}
+          <td class='table__cell'>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+
+  <div class="border-top pt-3">
+    <h3>  Want to restart the analysis? <a href="{{url_for('home')}}"> Go back to home page</a></h3>
+  </div>
+
+
+
+{% endblock content %}

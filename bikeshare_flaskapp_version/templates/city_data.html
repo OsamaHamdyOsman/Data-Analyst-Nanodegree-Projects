@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content %}
+        <h1>Hello, Here you go with some interesting statistics!</h1>
+
+        <p>
+          <ul>
+            <h2 class="header">Time Statistics </h2>
+            <li>The most common month is: <span style='background:#33FFEB;font-family:Georgia;color:red'>{{ pop_month }}</li>
+            <li>The most common day is: <span style='background:#33FFEB;font-family:Georgia;color:red'>{{ pop_day }}</li>
+            <li>The most common hour is: <span style='background:#33FFEB;font-family:Georgia;color:red'>{{ pop_hour }}</li>
+            <h2>Station Statistics</h2>
+            <li>The most common start station is: <span style='background:#33FFEB;font-family:Georgia;color:red'>{{ pop_st_st }}</li>
+            <li>The most common end station is: <span style='background:#33FFEB;font-family:Georgia;color:red'>{{ pop_e_st }}</li>
+            <li>The most common route is: <span style='background:#33FFEB;font-family:Georgia;color:red'>{{ pop_route }}</li>
+            <h2>Trip Statistics</h2>
+            <li>Total Travel Time (days:hours:minutes:seconds): <span style='background:#33FFEB'> {{ tot_dur.0 }}:{{ '%02d' % tot_dur.1 }}:{{'%02d' % tot_dur.2 }}:{{'%02d' % tot_dur.3 }} </li>
+            <li>Average Travel Time (days:hours:minutes:seconds): <span style='background:#33FFEB'> {{'%02d' % avg_dur.0 }}:{{ '%02d' % avg_dur.1 }}:{{'%02d' % avg_dur.2 }}:{{'%02d' % avg_dur.3 }} </li>
+            <h2>User Statistics</h2>
+            <li>User counts:
+              <table class="table">
+                <tr class="table__header">
+                  {% for hd in u_ct_h %}
+                    <th class="table__cell">{{ hd }}</th>
+                  {% endfor %}
+                </tr>
+                {% for row in u_ct_r %}
+                <tr class="table__row">
+                  {% for cell in row %}
+                    <td class='table__cell'>{{ cell }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </table>
+            </li>
+            <li>Gender counts:
+              {% if g_ct.any %}
+              <table class="table">
+                <tr class="table__header">
+                  {% for hd in g_ct_h %}
+                    <th class="table__cell">{{ hd }}</th>
+                  {% endfor %}
+                </tr>
+                {% for row in g_ct_r %}
+                <tr class="table__row">
+                  {% for cell in row %}
+                    <td class='table__cell'>{{ cell }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </table>
+              {% else %}
+                This data is not avaiable for {{ city }}
+              {% endif %}
+            </li>
+            <li>Birth Year Statistics:
+              {% if earliest_yob %}
+              <ul>
+                <li>Earliest birth year:  {{'%0d' % earliest_yob}}
+                <li>Most recent birth year:  {{'%0d' %  most_recent_yob }}
+                <li>Most common birth year: {{ '%0d' % most_common_yob }}
+              </ul>
+              {% else %}
+                This data is not avaiable for {{ city }}
+              {%endif%}
+            </li>
+          </ul>
+        </p>
+        <div class="border-top pt-3">
+            Want to check the raw data? <a href="{{ url_for('display_raw_data', city=city, start_loc=0) }}"> Click here</a>
+        </div>
+        <div class="border-top pt-3">
+            Want to restart the analysis? <a href="{{url_for('home')}}"> Go back to home page</a>
+        </div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <div class="content-section">
+    <form action = "http://localhost:5000/home" method = "POST" name="Inputs">
+      {{form.hidden_tag()}}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">BikeShare Filters:</legend>
+        <div class="form-group">
+           <p>Specify a City, Month and Day of your Choice:</p>
+           <p>
+             {{form.city.label(class="form-control-label")}}
+             {{form.city(class="form-control")}}
+             {{form.month.label(class="form-control-label")}}
+             {{form.month(class="form-control")}}
+             {{form.day.label(class="form-control-label")}}
+             {{form.day(class="form-control")}}
+           </p>
+         </div>
+      </fieldset>
+      <div class="form-group">
+        {{ form.submit(class='btn btn-outline-info')}}
+      </div>
+    </form>
+ </div>
+{% endblock content %}
