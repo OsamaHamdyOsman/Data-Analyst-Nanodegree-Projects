@@ -3,6 +3,9 @@ This is a special version of a project that is part of the Data Analyst Nanodegr
 
 > In this project, making use of Python and Flask to create an app that explores data related to bike share systems for three major cities in the United States—Chicago, New York City, and Washington. Writing code to import the data and answer interesting questions about it by computing descriptive statistics. I will also write a script that takes in raw input to create an interactive experience in the terminal to present these statistics.
 
+![image](https://user-images.githubusercontent.com/49010338/159188263-232eb65d-2937-4bca-93b2-b365728d18b9.png)
+
+
 ## What Software Do I Need?
 To complete this project, the following software requirements apply:
 
