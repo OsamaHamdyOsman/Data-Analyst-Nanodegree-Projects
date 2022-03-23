@@ -1,15 +1,12 @@
 # Overview
-This is a special version of a project that is part of the Data Analyst Nanodegree program of Udacity.
+This project is part of the Data Analyst Nanodegree program of Udacity.
 
-> In this project, making use of Python and Flask to create an app that explores data related to bike share systems for three major cities in the United States—Chicago, New York City, and Washington. Writing code to import the data and answer interesting questions about it by computing descriptive statistics. I will also write a script that takes in raw input to create an interactive experience in the terminal to present these statistics.
-
-![image](https://user-images.githubusercontent.com/49010338/159188263-232eb65d-2937-4bca-93b2-b365728d18b9.png)
-
+> In this project, making use of Python to explore data related to bike share systems for three major cities in the United States—Chicago, New York City, and Washington. Writing code to import the data and answer interesting questions about it by computing descriptive statistics. I will also write a script that takes in raw input to create an interactive experience in the terminal to present these statistics.
 
 ## What Software Do I Need?
 To complete this project, the following software requirements apply:
 
-* You should have Python 3, Flask, NumPy, and pandas installed using Anaconda
+* You should have Python 3, NumPy, and pandas installed using Anaconda
 * A text editor, like Sublime or Atom.
 * A terminal application (Terminal on Mac and Linux or Cygwin on Windows).
 
@@ -67,35 +64,22 @@ You will learn about bike share use in Chicago, New York City, and Washington by
 
 # An Interactive Experience
 
-The bikeshare_app.py file is set up as a ***web application*** that takes in inputs to create an interactive experience that answers questions about the dataset. The experience is interactive because depending on a user's inputs about city, month and day to analyze the data accordingly and display informative statistics. 
+The bikeshare.py file is set up as a script that takes in raw input to create an interactive experience in the terminal that answers questions about the dataset. The experience is interactive because depending on a user's input, the answers to the questions on the previous page will change! There are four questions that will change the answers:
 
-# Implementation steps:
+1. Would you like to see data for Chicago, New York, or Washington?. 
+2. Would you like to filter the data by month, day, or not at all?
+3. (If they chose month) Which month - January, February, March, April, May, or June?
+4. (If they chose day) Which day - Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday?
 
-1. You need to have python and the required packages installed.
-2. Open a terminal and run the `bikeshare_app.py` file by typing this command: 'python bikeshare_app.py`
+The answers to the questions above will determine the city and timeframe on which you'll do data analysis. After filtering the dataset, users will see the statistical result of the data, and choose to start again or exit.
 
-![image](https://user-images.githubusercontent.com/49010338/159187980-12b4af59-0c80-4123-b75e-9ff2e0dd1fc8.png)
+Remember that any time you ask users for input, there is a chance they may not enter what you expect, so your code should handle unexpected input well without failing. You need to anticipate raw input errors like using improper upper or lower case, typos, or users misunderstanding what you are expecting. Use the tips provided in the sections of the Scripting lesson in this course to make sure your code does not fail with an execution error due to unexpected raw input.
 
-3. Then open the local host on any web browser like googl Chrome and start by selecting a city, month and day:
-
-![image](https://user-images.githubusercontent.com/49010338/159188072-bec90d79-d53a-4573-9366-b609bbb53832.png)
-
-4. Finally, you can check raw data or go back to the home bage by clicking on the links at the page bottom:
-
-![image](https://user-images.githubusercontent.com/49010338/159188111-3b908b54-3e78-4d0e-8570-0296a6614b75.png)
+Your script also needs to prompt the user whether they would like want to see the raw data. If the user answers 'yes,' then the script should print 5 rows of the data at a time, then ask the user if they would like to see 5 more rows of the data. The script should continue prompting and printing the next 5 rows at a time until the user chooses 'no,' they do not want any more raw data to be displayed.
 
 
-
-# The data comprises three csv files:
+The data comprises three csv files:
     1. [Washington data](./washington.csv) 
     2. [Chicago data](./chicago.csv)
     3. [NYC data](./new_york_city.csv)
     
-
-
-## Resources:
-* https://newbedev.com/how-to-add-next-button-in-flask-code-example
-* https://stackoverflow.com/questions/12681036/is-there-a-direct-approach-to-format-numbers-in-jinja2/12681178
-* https://stackoverflow.com/questions/49741978/flask-and-pandas
-* https://stackoverflow.com/questions/52644035/how-to-show-a-pandas-dataframe-into-a-existing-flask-html-table
-* https://www.youtube.com/watch?v=mCy52I4exTU
