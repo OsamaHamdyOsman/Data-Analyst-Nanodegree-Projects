@@ -1,5 +1,5 @@
 
-<img src='images/cover.PNG' width='900'>
+<img src='cover.PNG' width='900'>
 
 ## Contents
 
